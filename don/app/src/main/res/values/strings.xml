@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">don</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="floatingActionButton">Adicionar postagem</string>
+    <string name="perfil_da_ong">Perfil da ONG</string>
+    <string name="galeria">Galeria</string>
+</resources>
