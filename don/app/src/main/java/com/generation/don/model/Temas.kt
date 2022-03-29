@@ -1,7 +1,6 @@
 package com.generation.don.model
 
-data class Postagem (
-
+class Temas (
     val id: Long,
     val titulo: String,
     val descricao: String,

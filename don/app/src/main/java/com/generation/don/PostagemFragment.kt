@@ -55,4 +55,5 @@ class PostagemFragment : Fragment() {
         }
         return view
     }
+
 }
