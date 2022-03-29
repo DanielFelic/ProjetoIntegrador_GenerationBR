@@ -6,71 +6,58 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.generation.don.adapter.PostagemAdapter
+import com.generation.don.databinding.FragmentFeedBinding
+import com.generation.don.databinding.FragmentPostagemBinding
 import com.generation.don.model.Postagem
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class FeedFragment : Fragment() {
 
+    private val mainViewModel: MainViewModel by activityViewModels()
+
+    private lateinit var binding: FragmentFeedBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_feed, container, false)
 
-        val buttonPost = view.findViewById<FloatingActionButton>(R.id.floatingActionButton)
-
-        buttonPost.setOnClickListener {
-            findNavController().navigate(
-                R.id.action_feedFragment_to_postagemFragment
-            )
-        }
-
-        val listaPostagem = mutableListOf(
-
-            Postagem(
-                "Distribuição de marmitas",
-                "ONG Instituto Alimentar",
-                "Alimentação",
-                "Link Teste",
-                "Distribuição de marmitas durante a madrugada em São Paulo.",
-                "21/03/2022"
-            ),
-            Postagem(
-                "Curso de Programação",
-                "ONG Generation Brasil",
-                "Educação",
-                "Link Teste",
-                "Cursos de programação web e mobile para pessoas carentes.",
-                "22/03/2022"
-            ),
-            Postagem(
-                "Doação de cestas básicas",
-                "ONG Banco de Alimentos",
-                "Alimentação",
-                "Link Teste",
-                "Doação de cestas básicas na comunidade de Paraisópolis.",
-                "23/03/2022"
-            )
-
+        binding = FragmentFeedBinding.inflate(
+            layoutInflater, container, false
         )
-
-        val recyclerPostagem = view.findViewById<RecyclerView>(R.id.recyclerPostagem)
-
         val adapter = PostagemAdapter()
 
-        recyclerPostagem.layoutManager = LinearLayoutManager(context)
+        binding.recyclerPostagem.layoutManager = LinearLayoutManager(context)
 
-        recyclerPostagem.adapter = adapter
+        binding.recyclerPostagem.adapter = adapter
 
-        recyclerPostagem.setHasFixedSize(true)
+        binding.recyclerPostagem.setHasFixedSize(true)
 
-        adapter.setListaPost(listaPostagem)
+        binding.floatingActionButton.setOnClickListener {
+            findNavController().navigate(R.id.action_feedFragment_to_postagemFragment)
+        }
 
-        return view
+        mainViewModel.myPostagemResponse.observe(viewLifecycleOwner, {
+            response -> if (response != null){
+                adapter.setListaPost(response.body()!!)
+            }
+        })
+
+
+
+
+
+
+
+
+
+
+        return binding.root
     }
 
 }
