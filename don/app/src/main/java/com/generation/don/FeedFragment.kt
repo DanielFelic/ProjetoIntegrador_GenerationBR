@@ -27,6 +27,8 @@ class FeedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        mainViewModel.listPostagem()
+
         binding = FragmentFeedBinding.inflate(
             layoutInflater, container, false
         )
@@ -47,16 +49,6 @@ class FeedFragment : Fragment() {
                 adapter.setListaPost(response.body()!!)
             }
         })
-
-
-
-
-
-
-
-
-
-
         return binding.root
     }
 

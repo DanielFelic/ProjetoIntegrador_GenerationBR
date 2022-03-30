@@ -35,7 +35,7 @@ class PostagemAdapter : RecyclerView.Adapter<PostagemAdapter.PostagemViewHolder>
 
         holder.textTitulo.text = postagem.titulo
         holder.textAutor.text = postagem.autor
-        holder.textCategoria.text = postagem.tema
+        holder.textCategoria.text = postagem.tema.descricao
         holder.textDescricao.text = postagem.descricao
         holder.textData.text = postagem.dataHora
     }

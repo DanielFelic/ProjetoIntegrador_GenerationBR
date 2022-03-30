@@ -8,5 +8,5 @@ data class Postagem (
     val imagem: String,
     val dataHora: String,
     val autor: String,
-    val tema: String) {
+    val tema: Temas) {
 }

@@ -8,10 +8,14 @@ import androidx.lifecycle.viewModelScope
 import com.generation.don.model.Postagem
 import com.generation.don.model.Temas
 import com.generation.don.repository.Repository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import java.time.LocalDate
+import javax.inject.Inject
 
-class MainViewModel(
+@HiltViewModel
+class MainViewModel @Inject constructor(
     val repository: Repository
     ): ViewModel() {
 
@@ -27,7 +31,10 @@ class MainViewModel(
         val myPostagemResponse: LiveData<Response<List<Postagem>>> =
             _myPostagemResponse
 
+        val dataPostagem = MutableLiveData<LocalDate>()
+
     init {
+        dataPostagem.value = LocalDate.now()
         listTema()
     }
 
@@ -45,7 +52,8 @@ class MainViewModel(
     fun addPost(postagem: Postagem){
         viewModelScope.launch {
             try {
-                repository.addPost(postagem)
+                val response = repository.addPost(postagem)
+                Log.d("Resposta", response.body().toString())
                 listPostagem()
             }catch (e: Exception){
                 Log.d("Erro", e.message.toString())
