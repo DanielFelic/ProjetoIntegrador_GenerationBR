@@ -63,8 +63,7 @@ class PostagemFragment : Fragment() {
         val desc = binding.editDesc.text.toString()
         val imagem = binding.editLink.text.toString()
         val tema = Temas(temaSelecionado, null, null, null)
-        val data = LocalDate.now()
-        val dataHora = "2022-03-30T16:41:27.074Z"
+        val dataHora = LocalDate.now().toString()
         val autor = "Usuário"
 
         Log.d("Resposta", titulo)
