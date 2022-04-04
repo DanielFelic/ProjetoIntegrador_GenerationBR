@@ -5,16 +5,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
+import com.generation.don.MainViewModel
 import com.generation.don.R
 import com.generation.don.model.Postagem
 
-class PostagemAdapter : RecyclerView.Adapter<PostagemAdapter.PostagemViewHolder>() {
+class PostagemAdapter (
+    private val postItemClickListener: PostItemClickListener,
+    private val mainViewModel: MainViewModel
+        ): RecyclerView.Adapter<PostagemAdapter.PostagemViewHolder>() {
 
     private var listaPostagens = emptyList<Postagem>()
 
     class PostagemViewHolder (view: View) : RecyclerView.ViewHolder(view){
 
         val textTitulo = view.findViewById<TextView>(R.id.textTitulo)
+        val buttonEditar = view.findViewById<ImageButton>(R.id.imageButtonEditar)
         val textAutor = view.findViewById<TextView>(R.id.textAutor)
         val textCategoria = view.findViewById<TextView>(R.id.textCategoria)
         val textImagem = view.findViewById<ImageView>(R.id.imageViewPost)
@@ -38,6 +43,11 @@ class PostagemAdapter : RecyclerView.Adapter<PostagemAdapter.PostagemViewHolder>
         holder.textCategoria.text = postagem.tema.descricao
         holder.textDescricao.text = postagem.descricao
         holder.textData.text = postagem.dataHora
+
+        holder.buttonEditar.setOnClickListener {
+            postItemClickListener.onPostClicked(postagem)
+        }
+
     }
 
     override fun getItemCount(): Int {

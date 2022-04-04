@@ -19,6 +19,8 @@ class MainViewModel @Inject constructor(
     val repository: Repository
     ): ViewModel() {
 
+        var postagemSelecionada: Postagem? = null
+
         private var _myTemaResponse =
             MutableLiveData<Response<List<Temas>>>()
 
@@ -68,6 +70,17 @@ class MainViewModel @Inject constructor(
                 _myPostagemResponse.value = response
             }catch (e: Exception){
                 Log.e("Developer", "Error", e)
+            }
+        }
+    }
+
+    fun updatePostagem(postagem: Postagem){
+        viewModelScope.launch {
+            try {
+                repository.updatePostagem(postagem)
+                listPostagem()
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
             }
         }
     }

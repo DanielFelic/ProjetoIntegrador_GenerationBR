@@ -22,6 +22,7 @@ class PostagemFragment : Fragment() {
 
     private lateinit var binding: FragmentPostagemBinding
     private val mainViewModel: MainViewModel by activityViewModels()
+    private var postagemSelecionada: Postagem? = null
     private var temaSelecionado = 0L
 
     override fun onCreateView(
@@ -30,6 +31,8 @@ class PostagemFragment : Fragment() {
     ): View? {
 
         binding = FragmentPostagemBinding.inflate(layoutInflater, container, false)
+
+        carregarDados()
 
         mainViewModel.myTemaResponse.observe(viewLifecycleOwner){
             response -> Log.d("Requisição", response.body().toString())
@@ -73,10 +76,18 @@ class PostagemFragment : Fragment() {
         Log.d("Resposta", autor)
 
         if (validarCampos(titulo, desc, imagem)){
-            val postagem = Postagem(
-                0, titulo, desc, imagem, dataHora, autor, tema
-            )
-            mainViewModel.addPost(postagem)
+            if (postagemSelecionada == null) {
+                val postagem = Postagem(
+                    0, titulo, desc, imagem, dataHora, autor, tema
+                )
+                mainViewModel.addPost(postagem)
+            }else{
+                val postagem = Postagem(
+                    postagemSelecionada?.id!!,
+                    titulo, desc, imagem, dataHora, autor, tema
+                )
+                mainViewModel.updatePostagem(postagem)
+            }
             Toast.makeText(
                 context, "Publicação realizada!",
                 Toast.LENGTH_LONG
@@ -113,6 +124,22 @@ class PostagemFragment : Fragment() {
                     }
 
                 }
+        }
+    }
+
+    private fun carregarDados(){
+        postagemSelecionada = mainViewModel.postagemSelecionada
+        if(postagemSelecionada != null){
+            binding.editTitulo.setText(postagemSelecionada?.titulo)
+            binding.textPerfil.setText(postagemSelecionada?.autor)
+            binding.editDesc.setText(postagemSelecionada?.descricao)
+            binding.textDataHora.setText(postagemSelecionada?.dataHora)
+            binding.spinnerTema.setSelection(postagemSelecionada!!.tema.id!!.toInt())
+        }else{
+            binding.editTitulo.text = null
+            binding.textPerfil.text = null
+            binding.editDesc.text = null
+            binding.textDataHora.text = null
         }
     }
 

@@ -18,4 +18,11 @@ interface ApiService {
     @GET("temas")
     suspend fun listTema(): Response<List<Temas>>
 
+    @PUT("postagens")
+    suspend fun updatePostagem(
+        @Body postagem: Postagem
+    ): Response<Postagem>
+
+
+
 }

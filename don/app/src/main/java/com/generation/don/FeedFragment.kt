@@ -10,13 +10,14 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.generation.don.adapter.PostItemClickListener
 import com.generation.don.adapter.PostagemAdapter
 import com.generation.don.databinding.FragmentFeedBinding
 import com.generation.don.databinding.FragmentPostagemBinding
 import com.generation.don.model.Postagem
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class FeedFragment : Fragment() {
+class FeedFragment : Fragment(), PostItemClickListener {
 
     private val mainViewModel: MainViewModel by activityViewModels()
 
@@ -32,7 +33,7 @@ class FeedFragment : Fragment() {
         binding = FragmentFeedBinding.inflate(
             layoutInflater, container, false
         )
-        val adapter = PostagemAdapter()
+        val adapter = PostagemAdapter(this, mainViewModel)
 
         binding.recyclerPostagem.layoutManager = LinearLayoutManager(context)
 
@@ -41,6 +42,7 @@ class FeedFragment : Fragment() {
         binding.recyclerPostagem.setHasFixedSize(true)
 
         binding.floatingActionButton.setOnClickListener {
+            mainViewModel.postagemSelecionada = null
             findNavController().navigate(R.id.action_feedFragment_to_postagemFragment)
         }
 
@@ -50,6 +52,11 @@ class FeedFragment : Fragment() {
             }
         })
         return binding.root
+    }
+
+    override fun onPostClicked(postagem: Postagem) {
+        mainViewModel.postagemSelecionada = postagem
+        findNavController().navigate(R.id.action_feedFragment_to_postagemFragment)
     }
 
 }
