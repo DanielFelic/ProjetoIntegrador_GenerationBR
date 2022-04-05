@@ -5,4 +5,5 @@
     <string name="perfil_da_ong">Perfil da ONG</string>
     <string name="galeria">Galeria</string>
     <string name="buttonEditar" />
+    <string name="buttonDelete" />
 </resources>

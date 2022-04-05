@@ -19,6 +19,7 @@ class PostagemAdapter (
     class PostagemViewHolder (view: View) : RecyclerView.ViewHolder(view){
 
         val textTitulo = view.findViewById<TextView>(R.id.textTitulo)
+        val buttonDelete = view.findViewById<ImageButton>(R.id.imageButtonDelete)
         val buttonEditar = view.findViewById<ImageButton>(R.id.imageButtonEditar)
         val textAutor = view.findViewById<TextView>(R.id.textAutor)
         val textCategoria = view.findViewById<TextView>(R.id.textCategoria)
@@ -46,6 +47,10 @@ class PostagemAdapter (
 
         holder.buttonEditar.setOnClickListener {
             postItemClickListener.onPostClicked(postagem)
+        }
+
+        holder.buttonDelete.setOnClickListener {
+            mainViewModel.deletePostagem(postagem.id)
         }
 
     }

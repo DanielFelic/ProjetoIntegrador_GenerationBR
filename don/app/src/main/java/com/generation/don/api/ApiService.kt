@@ -23,6 +23,12 @@ interface ApiService {
         @Body postagem: Postagem
     ): Response<Postagem>
 
+    @DELETE("postagens/{id}")
+    suspend fun deletePostagem(
+        @Path("id") valor: Long
+    ): Response<Postagem>
+
+
 
 
 }
