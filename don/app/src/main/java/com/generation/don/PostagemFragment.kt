@@ -11,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.generation.don.adapter.PostagemAdapter
 import com.generation.don.databinding.FragmentPostagemBinding
 import com.generation.don.model.Postagem
@@ -46,6 +47,10 @@ class PostagemFragment : Fragment() {
         binding.ButtonPublicar.setOnClickListener {
             inserirNoBanco()
         }
+
+
+
+
 
         return binding.root
     }

@@ -6,4 +6,5 @@
     <string name="galeria">Galeria</string>
     <string name="buttonEditar" />
     <string name="buttonDelete" />
+    <string name="link_imagem">Link Imagem</string>
 </resources>

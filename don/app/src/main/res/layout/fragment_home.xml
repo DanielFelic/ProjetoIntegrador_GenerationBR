@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeFragment"
+    android:background="@drawable/degrade_bg">
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_logo_don_branco" />
+
+    <Button
+        android:id="@+id/buttonCadastro"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imageLogo"
+        android:layout_marginTop="80dp"
+        android:text="Cadastre-se"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:fontFamily="@font/comfortaa"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2sp"/>
+
+    <Button
+        android:id="@+id/buttonGoogle"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/buttonCadastro"
+        android:text="Cadastre-se com o Google"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:fontFamily="@font/comfortaa"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2sp"/>
+
+    <Button
+        android:id="@+id/buttonEntrar"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/buttonGoogle"
+        android:text="Entrar"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:fontFamily="@font/comfortaa"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2sp"/>
+
+</RelativeLayout>

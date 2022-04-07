@@ -33,7 +33,7 @@ class FeedFragment : Fragment(), PostItemClickListener {
         binding = FragmentFeedBinding.inflate(
             layoutInflater, container, false
         )
-        val adapter = PostagemAdapter(this, mainViewModel)
+        val adapter = PostagemAdapter(this, mainViewModel, requireContext())
 
         binding.recyclerPostagem.layoutManager = LinearLayoutManager(context)
 

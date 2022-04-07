@@ -1,17 +1,20 @@
 package com.generation.don.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.generation.don.MainViewModel
 import com.generation.don.R
 import com.generation.don.model.Postagem
 
 class PostagemAdapter (
     private val postItemClickListener: PostItemClickListener,
-    private val mainViewModel: MainViewModel
+    private val mainViewModel: MainViewModel,
+    private val context: Context
         ): RecyclerView.Adapter<PostagemAdapter.PostagemViewHolder>() {
 
     private var listaPostagens = emptyList<Postagem>()
@@ -45,12 +48,20 @@ class PostagemAdapter (
         holder.textDescricao.text = postagem.descricao
         holder.textData.text = postagem.dataHora
 
+
+        //Adicionar imagem com Glide
+
+        Glide.with(context)
+            .load(postagem.imagem)
+            .placeholder(android.R.drawable.ic_menu_report_image)
+            .into(holder.textImagem)
+
         holder.buttonEditar.setOnClickListener {
             postItemClickListener.onPostClicked(postagem)
         }
 
         holder.buttonDelete.setOnClickListener {
-            mainViewModel.deletePostagem(postagem.id)
+            gerarDialog(postagem)
         }
 
     }
@@ -62,6 +73,20 @@ class PostagemAdapter (
     fun setListaPost(lista: List<Postagem>){
         listaPostagens = lista
         notifyDataSetChanged()
+    }
+
+    fun gerarDialog(postagem: Postagem){
+        val alert = androidx.appcompat.app.AlertDialog.Builder(context)
+        alert.setTitle("Excluir publicação")
+        alert.setMessage("Deseja excluir a publicação?")
+        alert.setPositiveButton("Sim", {dialog, id ->
+            dialog.cancel()
+            mainViewModel.deletePostagem(postagem.id)
+        })
+        alert.setNegativeButton("Não", {dialog, id ->
+            dialog.cancel()
+        })
+        alert.show()
     }
 
 }

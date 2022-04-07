@@ -7,32 +7,34 @@
     android:layout_height="match_parent"
     tools:context=".PostagemFragment">
 
-    <EditText
-        android:id="@+id/editTitulo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:ems="10"
-        android:hint="Título da Publicação"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColorHint="#757575"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageCabecalho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_logo_don_colorido"
+            tools:src="@tools:sample/avatars" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="24dp"
-        android:textColor="@color/black"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/comfortaa"
+        android:textColor="@color/prymary_blue"
         app:layout_constraintStart_toEndOf="@+id/imagePerfil"
-        app:layout_constraintTop_toBottomOf="@+id/editTitulo"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         tools:text="@string/perfil_da_ong" />
 
     <ImageView
@@ -40,20 +42,43 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTitulo"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:srcCompat="@drawable/logo_genbr" />
 
+    <Spinner
+        android:id="@+id/spinnerTema"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/imagePerfil"
+        app:layout_constraintTop_toBottomOf="@+id/textPerfil" />
+
+    <TextView
+        android:id="@+id/textDataHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/comfortaa"
+        android:textColor="@color/prymary_blue"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPerfil"
+        tools:text="Data" />
+
     <EditText
-        android:id="@+id/editDesc"
+        android:id="@+id/editTitulo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
-        android:hint="Comece a corrente do bem..."
+        android:fontFamily="@font/comfortaa"
+        android:hint="Título da Publicação"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColorHint="#757575"
@@ -62,64 +87,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerTema" />
 
-    <Spinner
-        android:id="@+id/spinnerTema"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@+id/imagePerfil"
-        app:layout_constraintTop_toBottomOf="@+id/textPerfil" />
-
-    <TextView
-        android:id="@+id/textDataHora"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="32dp"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTitulo"
-        tools:text="Data" />
-
-    <TextView
-        android:id="@+id/textGaleria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDesc"
-        tools:text="@string/galeria" />
-
     <EditText
-        android:id="@+id/editLink"
+        android:id="@+id/editDesc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
-        android:hint="Link Imagem"
+        android:fontFamily="@font/comfortaa"
+        android:hint="Comece a corrente do bem..."
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColorHint="#757575"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textGaleria" />
+        app:layout_constraintTop_toBottomOf="@+id/editTitulo" />
+
+    <TextView
+        android:id="@+id/textInsira"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/comfortaa"
+        android:textColor="@color/prymary_blue"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editDesc"
+        tools:text="Insira uma imagem" />
 
     <ImageButton
         android:id="@+id/buttonLocalizacao"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/cardview_shadow_end_color"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_baseline_add_location_24"
-        android:tint="@color/black"
+        android:tint="@color/prymary_blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editLink" />
 
@@ -132,7 +141,7 @@
         android:backgroundTint="@color/cardview_shadow_end_color"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_baseline_beenhere_24"
-        android:tint="@color/black"
+        android:tint="@color/prymary_blue"
         app:layout_constraintStart_toEndOf="@+id/buttonLocalizacao"
         app:layout_constraintTop_toBottomOf="@+id/editLink" />
 
@@ -145,7 +154,7 @@
         android:backgroundTint="@color/cardview_shadow_end_color"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_baseline_alternate_email_24"
-        android:tint="@color/black"
+        android:tint="@color/prymary_blue"
         app:layout_constraintStart_toEndOf="@+id/buttonHashtag"
         app:layout_constraintTop_toBottomOf="@+id/editLink" />
 
@@ -154,12 +163,30 @@
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginStart="72dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="68dp"
         android:backgroundTint="@color/cardview_shadow_end_color"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_baseline_publish_24"
-        android:tint="@color/black"
+        android:tint="@color/prymary_blue"
         app:layout_constraintStart_toEndOf="@+id/buttonMarcar"
         app:layout_constraintTop_toBottomOf="@+id/editLink" />
+
+    <EditText
+        android:id="@+id/editLink"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:fontFamily="@font/comfortaa"
+        android:hint="@string/link_imagem"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInsira" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
