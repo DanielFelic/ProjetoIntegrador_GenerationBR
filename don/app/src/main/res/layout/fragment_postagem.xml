@@ -5,7 +5,8 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PostagemFragment">
+    tools:context=".PostagemFragment"
+    android:background="@color/background_blue">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -14,14 +15,15 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/prymary_blue">
 
         <ImageView
             android:id="@+id/imageCabecalho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_logo_don_colorido"
+            app:srcCompat="@drawable/ic_logo_don_branco"
             tools:src="@tools:sample/avatars" />
     </LinearLayout>
 
