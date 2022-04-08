@@ -1,4 +1,4 @@
-![TakeNotesImage2](https://i.imgur.com/M8zdEzn.png)
+![TakeNotesImage2](https://i.imgur.com/WmUelod.png)
 
 <h1 align="center"> Rede Social - DON </h1>
   
@@ -38,7 +38,7 @@ Engajamento na rede social convertido em distribuição ativa de renda para ONGs
   <h4 align="left"> 
                 O quê é a aplicação? 
 	</h4>
-Uma rede social onde as interações e o engajamento dos usuários seja convertido em ações práticas para a erradicação da pobreza.
+Uma rede social onde as interações e o engajamento dos usuários seja convertido em recursos para realizar ações práticas pela a erradicação da pobreza.
 	</p>
   
 
@@ -58,7 +58,7 @@ Uma rede social onde as interações e o engajamento dos usuários seja converti
 - [ ] Carteira de Criptomoeda Doney;
 - [ ] Cadastro de Usuários;
 - [ ] Sistema de Login;
-- [ ] Página de Perfil
+- [ ] Página de Perfil.
 
 
 <a id="-layout"></a>
@@ -98,7 +98,7 @@ Portanto, é necessário importar este repositório utilizando o Git, para depoi
     <td align="center"><a href="https://www.linkedin.com/in/devalexsouza/"><img style="border-radius: 50%;" src="https://i.imgur.com/8Ye8B2g.jpg" width="100px;" alt="Alex"/><br /><sub><b>Alex Souza</b></sub></a><br /><a href="https://github.com/oglz" title="Desenvolvedor FullStack Mobile Jr."> <img align="center" alt="Daniel-Git" height="75" width="75" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"></a></td>
     <td align="center"><a href="https://www.linkedin.com/in/daniel-sfeliciano/"><img style="border-radius: 50%;" src="https://i.imgur.com/D4xR3cQ.jpg" width="100px;" alt="Daniel"/><br /><sub><b>Daniel Feliciano</b></sub></a><br /><a href="https://github.com/DanielFelic" title="Desenvolvedor FullStack Mobile Jr."> <img align="center" alt="Daniel-Git" height="75" width="75" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"></a></td>
     <td align="center"><a href="https://www.linkedin.com/in/karolyne-daltro-0a8785152/"><img style="border-radius: 50%;" src="https://i.imgur.com/gFhUW04.jpg" width="100px;" alt="Karolyne"/><br /><sub><b>Karolyne Daltro</b></sub></a><br /><a href="https://github.com/karolyne-daltro" title="Desenvolvedora FullStack Mobile Jr."> <img align="center" alt="Daniel-Git" height="75" width="75" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"></a></td>
-     <td align="center"><a href="https://www.linkedin.com/in/marina-de-souza-b9104919a/"><img style="border-radius: 50%;" src="https://i.imgur.com/ndZDAQR.jpg" width="100px;" alt="Marina"/><br /><sub><b>Marina de Souza</b></sub></a><br /><a href="https://github.com/MarihSouza" title="Desenvolvedor FullStack Mobile Jr."> <img align="center" alt="Daniel-Git" height="75" width="75" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"></a></td>
+     <td align="center"><a href="https://www.linkedin.com/in/marina-de-souza-b9104919a/"><img style="border-radius: 50%;" src="https://i.imgur.com/ndZDAQR.jpg" width="100px;" alt="Marina"/><br /><sub><b>Marina de Souza</b></sub></a><br /><a href="https://github.com/MarihSouza" title="Desenvolvedora FullStack Mobile Jr."> <img align="center" alt="Daniel-Git" height="75" width="75" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"></a></td>
 <td align="center"><a href="https://www.linkedin.com/in/rodrigo-machado-barbuscia-9b9a2573/"><img style="border-radius: 50%;" src="https://i.imgur.com/kM6sZY3.jpg" width="100px;" alt="Rodrigo"/><br /><sub><b>Rodrigo Barbuscia</b></sub></a><br /><a href="https://github.com/rmbarbuscia" title="Desenvolvedor FullStack Mobile Jr."> <img align="center" alt="Daniel-Git" height="75" width="75" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"></a></td>
     
   </tr>
